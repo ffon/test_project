@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>5Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -111,7 +111,7 @@
 	        data_all.on("value", function(snapshot) { 
 		data = snapshot.val();
 		data_length = data.length;
-		var num = 0;
+		var num = 1;
 		var i=0;
 			
 		console.log("data");
@@ -124,28 +124,28 @@
 			if(key == data[i].key)
 			{
 				console.log("-----key == key ----");
-				num = 1;
-				console.log(num);
+				
+				
 				console.log(key +"="+data[i].key);
 				break;
 			}
 			i++;
+			num++;
 	      	}
 			
 	      console.log("-----------");
 			
-		if(num==1){
-	      		console.log("------if num = 1-----");
-			
+		if(num==data_length){
+	      		
 			console.log(num);
 			console.log(key +"="+data[i].key);
-		   	alert("ERROR");
-		   }else if(num==0){
-			console.log("length : "+data_length);
-			console.log("key : "+key);
-			console.log("comment : "+comment);
 		   	insert_data(data_length,key,comment,value);
-			alert("Complete");
+			alert("Complete")
+			
+		   }else{
+			alert("ERROR");
+			
+		   	;
 		   }      
 	      });
 	      
