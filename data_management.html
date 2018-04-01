@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>0Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -170,10 +170,15 @@
 	      var value =insert_value.value;
 	      var comment =insert_comment.value;
 	      
-       var push_Ref = ref("1").set({"link" : "value",
-				      "comment": "comment",
-				 "key":"test"}); // เพิ่มข้อมูลลงใน file base
+       var push_Ref = ref('1').set({link : "value",
+				      commment: "comment",
+				 key:"test"}); // เพิ่มข้อมูลลงใน file base
       	}
+// firebase.database().ref('users/' + userId).set({
+//     username: name,
+//     email: email,
+//     profile_picture : imageUrl
+//   });
 	    
 	    
       function edit_data()
