@@ -114,6 +114,7 @@
 		var value; 
 		var key = Object.keys(data);
 		console.log(key);
+		
 // 		for(var j =0 ; j<key.length ; j++){
 
 // 		    console.log(key[j]);
@@ -169,10 +170,11 @@
 	      var value =insert_value.value;
 	      var comment =insert_comment.value;
 	      
-       var push_Ref = ref("key").set({
-      	"link" : value
-      	"comment": comment}); // เพิ่มข้อมูลลงใน file base
-      }
+       var push_Ref = ref("key").set({"link" : value,
+				      "comment": comment}); // เพิ่มข้อมูลลงใน file base
+      	}
+	    
+	    
       function edit_data()
       {
         // var write_Ref = ref("a"); // แก้ไข้ข้อมูลใน a ที่ index 0 เป็น 1
