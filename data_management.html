@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>96Data management</title>  
+<title>6Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -156,19 +156,27 @@
         });
       }
       function insert_data()
-      {  
-//  	var ref = firebase.database().ref('DATA');    
+      {     
 	var insert_key = document.getElementById('insert-key');
 	var insert_value = document.getElementById('insert-value');
 	var insert_comment = document.getElementById('insert-comment');
       	var key = insert_key.value;
       	var value =insert_value.value;
       	var comment =insert_comment.value;
+	var data_all = firebase.database().ref(); 
 	      
+      data_all.on("value", function(snapshot) { 
+	     var data = snapshot.val();
+	console.log(data);
+	console.log(data.length);
+
+
+      });
+	
 	      
-	var push_Ref = firebase.database().ref("2").set({key: "bbbb",
-							commment:"bbbbb",
-							link:"oo"});
+// 	var push_Ref = firebase.database().ref("index").set({key: "bbbb",
+// 							commment:"bbbbb",
+// 							link:"oo"});
 
 	    
       }
