@@ -93,7 +93,7 @@
 	    
       function display_data()
       {
-        var ref = firebase.database().ref('DATA');
+        var ref = firebase.database().ref();
         var data_array = [];
         var data = {};
         var tbId = document.getElementById('table-list');
@@ -166,7 +166,9 @@
       	var comment =insert_comment.value;
 	      
 	      
-	var push_Ref = firebase.database().ref("1").set("b");
+	var push_Ref = firebase.database().ref("2").set({key: "bbbb",
+							commment:"bbbbb",
+							link:"oo"});
 
 	    
       }
