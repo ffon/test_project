@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>1Data management</title>  
+<title>5Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -88,54 +88,7 @@
 
 //       display_data();
       document.getElementById('btn-insert').onclick = function() {
-    	  insert_data();
-      };
-      function display_data()
-      {
-        var ref = firebase.database().ref();
-        var data_array = [];
-        var data = {};
-        var tbId = document.getElementById('table-list');
-	var key = {};
-// 	var Tbl = document.getElementById('tblId');
-// 	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
 	      
-        // อ่านค่าและแสดงผลในตางรางจาก filebase
-        ref.on("value", function(snapshot) { 
-        data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
-	var id;
-	var key;  
-	var link; 
-	var comment; 
-          for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
-          {
-            id    = i+1;
-            key   = data[i].key; 
-            comment  = data[i].comment; 
-            link = data[i].link; 
-            var row 	= tbId.insertRow(i);  // กำหนดตัวแปรแทนตัวแต่ละคอลัม
-            var c_id 	= row.insertCell(0);
-            var c_key 	= row.insertCell(1);
-            var c_link = row.insertCell(2);
-            var c_comment = row.insertCell(3);
-            var c_operations = row.insertCell(4);  
-		  
-            var line = document.createElement("p"); // สร้าง icon แก้ไข กับ ลบ
-            line.innerHTML = "<a class='glyphicon glyphicon-pencil' href='https://www.w3schools.com/html/'"+" id="+id+" name="+key+"></a> &nbsp &nbsp<a class='glyphicon glyphicon-trash' href='https://www.w3schools.com/html/'"+" id="+id+" name="+key+"></a>";
-            c_id.appendChild(document.createTextNode(id)); // เพิ่มข้อมูลลงในตารางแต่ละคอลัม
-            c_key.appendChild(document.createTextNode(key));
-            c_link.appendChild(document.createTextNode(link));
-            c_comment.appendChild(document.createTextNode(comment));
-            c_operations.append(line);
-		  
-          }
-        }, function (error) { // ถ้าเกิด error จากการดึงข้อมูลจะแสดง alert ออกมา
-          alert("Error: " + error.code);
-        });
-      }
-	    
-      function insert_data()
-      {     
 	      	var key ="";
 	      	var value = "";
 	      	var comment="";
@@ -185,15 +138,65 @@
 		   	alert("ERROR");
 		   }else{
 			console.log("length : "+data_length);
-			   
-// 		   	firebase.database().ref(data_length).set({key: key,
-// 							    comment:comment,
-// 							    link:value});
+			console.log("key : "+key);
+			console.log("comment : "+comment);
+		   	insert_data(data_length,key,comment,value);
 		   }      
 	      });
-
-// 	      display_data();
-	
+	      
+    	  
+      };
+      function display_data()
+      {
+        var ref = firebase.database().ref();
+        var data_array = [];
+        var data = {};
+        var tbId = document.getElementById('table-list');
+	var key = {};
+// 	var Tbl = document.getElementById('tblId');
+// 	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
+	      
+        // อ่านค่าและแสดงผลในตางรางจาก filebase
+        ref.on("value", function(snapshot) { 
+        data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
+	var id;
+	var key;  
+	var link; 
+	var comment; 
+          for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
+          {
+            id    = i+1;
+            key   = data[i].key; 
+            comment  = data[i].comment; 
+            link = data[i].link; 
+            var row 	= tbId.insertRow(i);  // กำหนดตัวแปรแทนตัวแต่ละคอลัม
+            var c_id 	= row.insertCell(0);
+            var c_key 	= row.insertCell(1);
+            var c_link = row.insertCell(2);
+            var c_comment = row.insertCell(3);
+            var c_operations = row.insertCell(4);  
+		  
+            var line = document.createElement("p"); // สร้าง icon แก้ไข กับ ลบ
+            line.innerHTML = "<a class='glyphicon glyphicon-pencil' href='https://www.w3schools.com/html/'"+" id="+id+" name="+key+"></a> &nbsp &nbsp<a class='glyphicon glyphicon-trash' href='https://www.w3schools.com/html/'"+" id="+id+" name="+key+"></a>";
+            c_id.appendChild(document.createTextNode(id)); // เพิ่มข้อมูลลงในตารางแต่ละคอลัม
+            c_key.appendChild(document.createTextNode(key));
+            c_link.appendChild(document.createTextNode(link));
+            c_comment.appendChild(document.createTextNode(comment));
+            c_operations.append(line);
+		  
+          }
+        }, function (error) { // ถ้าเกิด error จากการดึงข้อมูลจะแสดง alert ออกมา
+          alert("Error: " + error.code);
+        });
+      }
+	    
+      function insert_data(data_length,key,comment,value)
+      {     
+			console.log("length : "+data_length);
+			console.log("key : "+key);
+			console.log("comment : "+comment);
+			console.log("comment : "+value);
+// 		firebase.database().ref(data_length).set({key: key,comment:comment,link:value});
 
 	    
       }
