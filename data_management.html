@@ -157,7 +157,7 @@
       }
       function insert_data()
       {  
-//  	var ref = firebase.database().ref('DATA');    
+ 	var ref = firebase.database().ref('DATA');    
 	var insert_key = document.getElementById('insert-key');
 	var insert_value = document.getElementById('insert-value');
 	var insert_comment = document.getElementById('insert-comment');
@@ -165,18 +165,19 @@
       	var value =insert_value.value;
       	var comment =insert_comment.value;
 	      
-//        firebase.database().ref('DATA').set({link : "value",
-// 				      commment: "comment",
-// 				 key:"test"}); // เพิ่มข้อมูลลงใน file base
+	      
+var push_Ref = ref("3").set("a");
+//       ref("3").set({link : "value",
+// 		 commment: "comment",
+// 		 key:"test"}); 
 //       	}
-	 var playersRef = firebase.database().ref("DATA");
 
-	playersRef().push (
-	{link : "value",
-           commment: "comment",
- 	   key:"test"});
+// 	playersRef().push (
+// 	{link : "value",
+//            commment: "comment",
+//  	   key:"test"});
 	    
-      }
+//       }
 	    
       function edit_data()
       {
