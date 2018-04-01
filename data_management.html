@@ -101,18 +101,16 @@
           data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
 		console.log(data);
 		console.log(data.a);
+		console.log(data.a);
 		console.log('--------');
 		console.log(Object.keys(data));
 		var k= Object.keys(data);
 		
 		for(var j =0;j<k.length ; j++){
-			console.log(j);
-		}
-	for(var i=0 ; i<data.length ; i++){
-		console.log(i)
+			console.log(k[j]);
+			console.log(data.k[j]);
 			
-		
-	}
+		}
 
 //           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
 //           {
