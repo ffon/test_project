@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>Data management</title>  
+<title>2Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -126,7 +126,6 @@
 				console.log(num);
 				console.log(key +"="+data[i].key);
 				break;
-				console.log("break");
 			}
 			i++;
 	      	}
@@ -139,7 +138,7 @@
 			console.log(num);
 			console.log(key +"="+data[i].key);
 		   	alert("ERROR");
-		   }else{
+		   }else if(num==0){
 			console.log("length : "+data_length);
 			console.log("key : "+key);
 			console.log("comment : "+comment);
@@ -157,7 +156,7 @@
         var data = {};
         var tbId = document.getElementById('table-list');
 	var key = {};
-	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
+	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);
 	      
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) { 
