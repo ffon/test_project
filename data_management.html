@@ -156,7 +156,7 @@
         var data = {};
         var tbId = document.getElementById('table-list');
 	var key = {};
-	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);
+	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
 	      
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) { 
