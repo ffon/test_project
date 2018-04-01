@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>1Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -85,12 +85,9 @@
       };
       firebase.initializeApp(config);
 //       display_data();
-	    
-	    
-	    
-	     document.getElementById('btn-insert').onclick = function() {
-    			insert_data();
-    		};
+      document.getElementById('btn-insert').onclick = function() {
+    	  insert_data();
+      };
       function display_data()
       {
         var ref = firebase.database().ref();
@@ -136,23 +133,23 @@
 	      
 	      
 	      console.log("y");
-// 	      var key ="";
-// 	      var value = "";
-// 	      var comment="";
-// 		var insert_key = document.getElementById('insert-key');
-// 		var insert_value = document.getElementById('insert-value');
-// 		var insert_comment = document.getElementById('insert-comment');
-// 		key = insert_key.value;
-// 		value =insert_value.value;
-// 		comment =insert_comment.value;
-// 		var data_all = firebase.database().ref(); 
-// 		var data_length;
-// 	        var data;
+	      var key ="";
+	      var value = "";
+	      var comment="";
+		var insert_key = document.getElementById('insert-key');
+		var insert_value = document.getElementById('insert-value');
+		var insert_comment = document.getElementById('insert-comment');
+		key = insert_key.value;
+		value =insert_value.value;
+		comment =insert_comment.value;
+		var data_all = firebase.database().ref(); 
+		var data_length;
+	        var data;
 	      
-// 	        data_all.on("value", function(snapshot) { 
-// 		data = snapshot.val();
-// 		console.log(data);
-// 		data_length = data.length;
+	        data_all.on("value", function(snapshot) { 
+		data = snapshot.val();
+		console.log(data);
+		data_length = data.length;
  		
 // 		for(var i = 0;i<data.length;i++){
 // 		console.log(key +"="+data[i].key);
@@ -166,14 +163,12 @@
 // 		if(num==1){
 // 		   	alert("ERROR");
 // 		   }else{
-// 		   	firebase.database().ref(data_length).set({key: key,
-// 							    commment:comment,
-// 							    link:value});
+		   	firebase.database().ref(data_length).set({key: key,
+							    commment:comment,
+							    link:value});
 // 		   }      
-// 	      });
-	
-	     
-		
+	      });
+
 // 	      display_data();
 	
 
