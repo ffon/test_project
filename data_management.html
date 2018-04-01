@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>1Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -89,9 +89,7 @@
       display_data();
       document.getElementById('btn-insert').onclick = function() {
 	      
-	      	var key ="";
-	      	var value = "";
-	      	var comment="";
+	      	
 		var insert_key 		= document.getElementById('insert-key');
 		var insert_value 	= document.getElementById('insert-value');
 		var insert_comment 	= document.getElementById('insert-comment');
@@ -158,7 +156,7 @@
         var data = {};
         var tbId = document.getElementById('table-list');
 	var key = {};
-	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
+	while(tbId.childNodes.length>1){tbId.removeChild(tbId.lastChild);}
 	      
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) { 
