@@ -86,7 +86,7 @@
         messagingSenderId: "421898172154"
       };
       firebase.initializeApp(config);
-//       display_data();
+      display_data();
       function display_data()
       {
         var ref = firebase.database().ref();
@@ -124,6 +124,7 @@
           alert("Error: " + error.code);
         });
       }
+	    
       function insert_data()
       {     
 		var insert_key = document.getElementById('insert-key');
@@ -134,27 +135,29 @@
 		var comment =insert_comment.value;
 		var data_all = firebase.database().ref(); 
 		var data_length;
-	      var data;
+	        var data;
 	      
-	      data_all.on("value", function(snapshot) { 
+	        data_all.on("value", function(snapshot) { 
 		data = snapshot.val();
 		console.log(data);
 		data_length = data.length;
-		 
-	      });
-	
-	      for(var i = 0;i<data.length;i++){
+ 		
+		for(var i = 0;i<data.length;i++){
 		console.log(key +"="+data[i].key);
 		if(key != data[i].key)
 		{
-			var push_Ref = firebase.database().ref(data_length).set({key: key,
+			firebase.database().ref(data_length).set({key: key,
 							    commment:comment,
 							    link:value});
 		}else{
 			alert("Error Key");
 		}
 			 
-	      }
+	      }	
+		      
+	      });
+	
+	     
 		
 	      display_data();
 	
