@@ -162,7 +162,7 @@
       }
       function insert_data()
       {  
-	      var ref = firebase.database().ref('DATA');    
+// 	      var ref = firebase.database().ref('DATA');    
       		var insert_key = document.getElementById('insert-key');
      		var insert_value = document.getElementById('insert-value');
       		var insert_comment = document.getElementById('insert-comment');
@@ -170,7 +170,7 @@
 	      var value =insert_value.value;
 	      var comment =insert_comment.value;
 	      
-       var push_Ref = ref('1').set({link : "value",
+       firebase.database().ref('1').set({link : "value",
 				      commment: "comment",
 				 key:"test"}); // เพิ่มข้อมูลลงใน file base
       	}
