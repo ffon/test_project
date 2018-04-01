@@ -99,6 +99,11 @@
         ref.on("value", function(snapshot) { 
           data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
 		console.log(data);
+		
+		for(var i=0;i<data;i++){
+			
+			console.log(data[i]);
+		}
 //           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
 //           {
 //             id    = i+1;
