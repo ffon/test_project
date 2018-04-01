@@ -100,17 +100,11 @@
         ref.on("value", function(snapshot) { 
           data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
 		console.log(data);
-		console.log(data.a);
-		console.log(data.b);
-		console.log('--------');
-		console.log(Object.keys(data));
 		var k= Object.keys(data);
-		
 		for(var j =0;j<k.length ; j++){
 			var kk = k[j];
 			console.log(k[j]);
 			console.log(data[kk]);
-			
 		}
 
 //           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
