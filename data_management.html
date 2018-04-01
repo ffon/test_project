@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>2Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -130,7 +130,6 @@
 	    
       function insert_data()
       {     
-	      	console.log("y");
 	      	var key ="";
 	      	var value = "";
 	      	var comment="";
@@ -151,7 +150,9 @@
 	        data_all.on("value", function(snapshot) { 
 		data = snapshot.val();
 		data_length = data.length;
+		console.log("data");
 		console.log(data);
+		console.log("data_length");
 		console.log(data_length);
  		console.log("--------------");
 		for(var i = 0;i<data.length;i++){
@@ -167,14 +168,16 @@
 			 
 	      	}
 			
-	      console.log("--------------");
+	      console.log("-----------");
 			
 		if(num==1){
+	      		console.log("------if num = 1-----");
+			
 			console.log(num);
 			console.log(key +"="+data[i].key);
 		   	alert("ERROR");
 		   }else{
-			console.log(data_length);
+			console.log("length : "+data_length);
 			   
 // 		   	firebase.database().ref(data_length).set({key: key,
 // 							    commment:comment,
