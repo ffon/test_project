@@ -116,10 +116,11 @@
 		var date; 
 		var value; 
 		var key = Object.keys(data);
-		for(var j =0 ; j<key.length ; j++){
+		console.log(data);
+// 		for(var j =0 ; j<key.length ; j++){
 
-		    console.log(key[j]);
-		    console.log(data[key[j]]);
+// 		    console.log(key[j]);
+// 		    console.log(data[key[j]]);
 			
 // 		    var row 	= tbId.insertRow(j);  // กำหนดตัวแปรแทนตัวแต่ละคอลัม
 // 		    var c_id 	= row.insertCell(0);
@@ -135,7 +136,7 @@
 // 		    c_value.appendChild(document.createTextNode(data[key[j]]));
 // 		    c_operations.append(line);
 			
-		}
+// 		}
 
 //           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
 //           {
@@ -168,7 +169,7 @@
 	      var comment =insert_comment.value;
 	      
        var push_Ref = ref("key").set({
-      	"value" : value
+      	"link" : value
       	"comment": comment}); // เพิ่มข้อมูลลงใน file base
       }
       function edit_data()
