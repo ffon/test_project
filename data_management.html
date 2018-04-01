@@ -86,7 +86,7 @@
 	  };
 	  firebase.initializeApp(config);
 
-//       display_data();
+      display_data();
       document.getElementById('btn-insert').onclick = function() {
 	      
 	      	var key ="";
@@ -110,14 +110,14 @@
 		data = snapshot.val();
 		data_length = data.length;
 		var num = 0;
-		var i;
+		var i=0;
 			
 		console.log("data");
 		console.log(data);
 		console.log("data_length");
 		console.log(data_length);
  		console.log("-----for----");
-		for( i= 0;i<data.length;i++){
+		while( i<data.length){
 			console.log(key +"="+data[i].key);
 			if(key == data[i].key)
 			{
@@ -128,7 +128,7 @@
 				break;
 				console.log("break");
 			}
-			 
+			i++;
 	      	}
 			
 	      console.log("-----------");
@@ -157,8 +157,7 @@
         var data = {};
         var tbId = document.getElementById('table-list');
 	var key = {};
-// 	var Tbl = document.getElementById('tblId');
-// 	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
+	while(tbId.childNodes.length>0){tbId.removeChild(tbId.lastChild);}
 	      
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) { 
