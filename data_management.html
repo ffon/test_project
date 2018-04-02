@@ -92,6 +92,10 @@
 	  var insert_value 	= document.getElementById('insert-value');
 	  var insert_comment 	= document.getElementById('insert-comment');
 	    
+	   document.getElementsByName('del').onclick = function() {
+		   // get id;
+		   delete_data(id);
+	   } 
 	    
       	  document.getElementById('btn-insert').onclick = function() {
 	      
