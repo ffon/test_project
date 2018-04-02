@@ -211,7 +211,7 @@
 		console.log("value : "+value);
 		firebase.database().ref(data_length).set({key: key,comment:comment,link:value});
 		
-	    
+	        display_data()
       }
 	    
       function edit_data()
