@@ -133,7 +133,7 @@
 			
 	      	console.log("-----------");
 		console.log(num);	
-			insert_data(data_length,key,comment,value);
+		insert_data(data_length,key,comment,value);
 // 		if(num==1){
 	      		
 // 			alert("ERROR");
@@ -161,7 +161,8 @@
 // 	}
 	     
         // อ่านค่าและแสดงผลในตางรางจาก filebase
-        ref.on("value", function(snapshot) { 
+        ref.on("value", function(snapshot) 
+	{ 
         data = snapshot.val(); // เก็บข้อมูลที่ได้จาก firebase ไว้ที่ตัวแปร data
 	var id;
 	var key;  
@@ -200,7 +201,7 @@
 		console.log("key : "+key);
 		console.log("comment : "+comment);
 		console.log("value : "+value);
-		firebase.database().ref().child(data_length).push({key: key,comment:comment,link:value});
+		firebase.database().ref(data_length).set({key: key,comment:comment,link:value});
 		
 	    
       }
