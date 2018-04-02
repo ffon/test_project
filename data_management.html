@@ -200,7 +200,7 @@
 		console.log("key : "+key);
 		console.log("comment : "+comment);
 		console.log("value : "+value);
-		firebase.database().ref(data_length).push({key: key,comment:comment,link:value});
+		firebase.database().ref(data_length).set({key: key,comment:comment,link:value});
 		
 	    
       }
