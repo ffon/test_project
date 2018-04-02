@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>1Data management</title>  
+<title>Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -164,6 +164,8 @@
         var tbId = document.getElementById('table-list');
 	var key = {};
 	
+	var Table = document.getElementById("table-list");
+	Table.innerHTML = "";
 	     
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) 
@@ -173,9 +175,9 @@
 	var key;  
 	var link; 
 	var comment;
-// 	while(tbId.childNodes.length>1){
-// 		;
-// 	}
+
+
+		
           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
           {
             id    = i+1;
