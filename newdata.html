@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>14Data management</title>  
+<title>4Data management</title>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -86,16 +86,18 @@
 	  };
 	  firebase.initializeApp(config);
 
-      display_data();
-      document.getElementById('btn-insert').onclick = function() {
+      	  display_data();
+	  var insert_key 	= document.getElementById('insert-key');
+	  var insert_value 	= document.getElementById('insert-value');
+	  var insert_comment 	= document.getElementById('insert-comment');
+	    
+	    
+      	  document.getElementById('btn-insert').onclick = function() {
 	      
-	      	
-		var insert_key 		= document.getElementById('insert-key');
-		var insert_value 	= document.getElementById('insert-value');
-		var insert_comment 	= document.getElementById('insert-comment');
-		var key 		= insert_key.value;
-		var value 		= insert_value.value;
-		var comment 		= insert_comment.value;
+	      	var key 		= insert_key.value;
+	  	var value 		= insert_value.value;
+	  	var comment 		= insert_comment.value;
+		
 	        insert_key.value = "";
 	      	insert_value.value = "";
 	      	insert_comment.value = "";
@@ -103,12 +105,14 @@
 	        console.log("insert_value : "+value);
 	        console.log("insert_comment: "+comment);
 	      
-		var data_all = firebase.database().ref(); 
+		 
 		var data_length;
 	        var data;
+		var data_all = firebase.database().ref();
 	        data_all.on("value", function(snapshot) { 
 		data = snapshot.val();
 		data_length = data.length;
+		});
 		var num = 0;
 		var i=0;
 			
@@ -117,6 +121,7 @@
 		console.log("data_length");
 		console.log(data_length);
  		console.log("-----for----");
+		
 // 		while( i<data.length){
 // 			console.log(key +"="+data[i].key);
 // 			if(key == data[i].key)
@@ -145,10 +150,10 @@
 // 			console.log(key +"="+data[i].key);
 // 		   	insert_data(data_length,key,comment,value);
 // 		   }      
-	      });
+	      
 	      
     	  
-      };
+          };
       function display_data()
       {
         var ref = firebase.database().ref();
@@ -156,9 +161,7 @@
         var data = {};
         var tbId = document.getElementById('table-list');
 	var key = {};
-// 	while(tbId.childNodes.length>1){
-// 		;
-// 	}
+	
 	     
         // อ่านค่าและแสดงผลในตางรางจาก filebase
         ref.on("value", function(snapshot) 
@@ -167,7 +170,10 @@
 	var id;
 	var key;  
 	var link; 
-	var comment; 
+	var comment;
+// 	while(tbId.childNodes.length>1){
+// 		;
+// 	}
           for(var i = 0; i< data.length ; i++) // Loop เข้าถึงข้อมูล
           {
             id    = i+1;
@@ -177,7 +183,7 @@
             var row 	= tbId.insertRow(i);  // กำหนดตัวแปรแทนตัวแต่ละคอลัม
             var c_id 	= row.insertCell(0);
             var c_key 	= row.insertCell(1);
-            var c_link = row.insertCell(2);
+            var c_link  = row.insertCell(2);
             var c_comment = row.insertCell(3);
             var c_operations = row.insertCell(4);  
 		  
